@@ -2,7 +2,7 @@
 	<div class="movie_body">
 		<ul>
 			<li v-for="item in movieList" :key="item.id"> 
-				<div class="pic_show"><img :src="item.img | serWH('128.180')"></div>
+				<div class="pic_show"><img :src="item.img | setWH('128.180')"></div>
 				<div class="info_list">
 					<h2>{{ item.num }} <img v-if="item.version" src="@/assets/maxs.png" alt=""</h2>
 					<p>观众评 <span class="grade">{{ item.sc }}</span></p>
@@ -23,14 +23,13 @@ export default {
 	data(){
 		return {
 			movieList : []
-
-		}
+		};
 	},
 	mounted(){
 		this.axios.get('/api/movieOnInfoList?cityId=10').then((res)=>{
 			var msg = res.data.msg;
 			if( msg === 'ok' ){
-                    this.movieLst = res.data.data.movieList;
+                this.movieList = res.data.data.movieList;
             }
 		});
 	}

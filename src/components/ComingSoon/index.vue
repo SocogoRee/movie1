@@ -1,7 +1,7 @@
 <template>
 	<div class="movie_body">
 		<ul>
-			<li v-fro="item in comingList" :key="item.id">
+			<li v-for="item in comingList" :key="item.id">
 				<div class="pic_show"><img :src="item.img | setWH('128.180')"></div>
 				<div class="info_list">
 					<h2>{{ item.num }} <img v-if="item.version" src="@/assets/maxs.png" alt=""</h2>
