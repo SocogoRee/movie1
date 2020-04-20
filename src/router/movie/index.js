@@ -20,6 +20,26 @@ export default{
 			component : () => import ('@/components/Search')
 		},
 		{
+			path : 'detail/1/:movieId', //配置动态路由
+			components : {
+				default : ()=> import('@/components/NowPlaying'),
+				detail : ()=> import('@/views/Movie/detail')
+			},
+			props : {
+				detail : true
+			}
+		},
+		{
+			path : 'detail/2/:movieId', //配置动态路由
+			components : {
+				default : ()=> import('@/components/ComingSoon'),
+				detail : ()=> import('@/views/Movie/detail')
+			},
+			props : {
+				detail : true
+			}
+		},
+		{
 			path : '/movie',
 			redirect : '/movie/nowPlaying'
 		}
