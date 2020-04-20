@@ -43,7 +43,7 @@ export default {
 
         var cityList = window.localStorage.getItem('cityList');
         var hotList = window.localStorage.getItem('hotList');
-
+        // 本地存储
         if(cityList && hotList){
             this.cityList = JSON.parse(cityList);
             this.hotList = JSON.parse(hotList);
