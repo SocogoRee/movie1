@@ -1,4 +1,6 @@
+//静态资源配置
 module.exports = {
+	publicPath : '/movie1',
 	devServer : {
 		proxy : {
 			'/api' : {

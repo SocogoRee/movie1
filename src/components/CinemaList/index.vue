@@ -5,11 +5,13 @@
 			<ul>
 				<li v-for="item in cinemaList" :key="item.id">
 					<div>
-						<span>{{ item.nm }}</span>
+						<span @tap="handleToDetail(item.id)">{{ item.nm }}</span>
+						<!--
 						<span class="q"><span class="price">{{ item.sellPrice }}</span> 元起</span>
+						-->
 					</div>
 					<div class="address">
-						<span>{{ item.addr }}</span>
+						<span  @tap="handleToDetail(item.id)">{{ item.addr }}</span>
 						<span>{{ item.distance }}</span>
 					</div>
 					<div class="card">
@@ -74,6 +76,12 @@ export default{
 				}
 			}
 			return '';
+		}
+	},
+	methods : {
+		handleToDetail(cinemaId){
+			//console.log(cinemaId);
+			this.$router.push('/cinema/cinemaDetail/'+cinemaId);
 		}
 	}
 }
